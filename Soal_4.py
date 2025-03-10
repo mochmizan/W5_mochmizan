@@ -1,19 +1,16 @@
 #Soal 4
-class Shark:
-  def __init__(self, name):
-    self.name = name
+import math
 
-  def swim(self):
-    print(self.name + " is swimming.")
+class Paket:
+  def __init__(self, berat):
+    self.berat = berat #dalam kilo
+    self.harga = math.ceil(berat / 2) * 18
+  
+  def __add__(self, other):
+    return self.berat + other.berat
 
-  def be_awesome(self):
-    print(self.name + " is being awesome.")
-
-def main():
-  # Set name of Shark object
-  sammy = Shark("Sammy")
-  sammy.swim()
-  sammy.be_awesome()
-
-if __name__ == "__main__":
-  main()
+Minyak1 = Paket(1.2)
+Gula1 = Paket(2)
+paket1 = Paket(Minyak1 + Gula1)
+print("Berat kedua benda adalah", paket1.berat)
+print("Dengan harga pengiriman", paket1.harga)
