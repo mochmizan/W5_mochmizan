@@ -1,11 +1,18 @@
 #Soal 2
-class hp:
-  def __init__(self, merek, nama, ram):
-    self.merek = merek
-    self.nama = nama
-    self.ram = ram
+class Persegi:
+  def __init__(self, sisi):
+    self.sisi = sisi
+  def luas(self):
+    return (self.sisi**2)
 
-infinix11 = hp("INFINIX", "INFINIX HOT 11S", 8)
-print("Nama HP  :", infinix11.nama)
-print("Merek    :", infinix11.merek)
-print("RAM      :", infinix11.ram, "GB")
+class Kubus(Persegi):
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, **kwargs)
+
+  def luas(self):
+    return (self.sisi**3)
+
+objek1 = Persegi(3)
+objek2 = Kubus(3)
+print("Luas persegi", objek1.luas())
+print("Luas kubus", objek2.luas())
